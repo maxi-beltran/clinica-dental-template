@@ -34,7 +34,10 @@ proyecto/
     └── img/
         ├── hero-*.webp     ← 4 fotos hero slideshow
         ├── trat-*.webp     ← 13 fotos de tratamientos
-        └── *.svg           ← 6 placeholders SVG
+        ├── clinica-interior.webp  ← Interior clínica
+        ├── equipo-profesional.webp ← Equipo de dentistas
+        ├── box-dental.webp ← Box dental / tecnología
+        └── perfil-*.webp   ← 3 fotos perfil del equipo
 ```
 
 ---
@@ -132,16 +135,16 @@ Todas las fotos están en formato **WebP** (calidad 80) para máxima velocidad d
 | `trat-radiografia.webp`     | Radiografía      | ~10 KB        |
 | `trat-urgencia.webp`        | Urgencia         | ~7 KB         |
 
-### Placeholders SVG (para secciones sin foto real)
+### Secciones (3 fotos + 3 perfiles)
 
-| Archivo                  | Uso                              | Página             |
-| ------------------------ | -------------------------------- | ------------------ |
-| `hero-dental.svg`        | Placeholder hero genérico        | —                  |
-| `clinica-interior.svg`   | Interior de la clínica           | `index.html`       |
-| `box-dental.svg`         | Box dental                       | `quienes-somos`    |
-| `equipo-profesional.svg` | Equipo profesional               | `quienes-somos`    |
-| `tecnologia-dental.svg`  | Tecnología                       | `quienes-somos`    |
-| `perfil-placeholder.svg` | Foto de perfil (testimonios)     | `quienes-somos`    |
+| Archivo                     | Contenido          | Tamaño aprox. |
+| --------------------------- | ------------------ | ------------- |
+| `clinica-interior.webp`     | Interior clínica   | ~34 KB        |
+| `equipo-profesional.webp`   | Equipo profesional | ~31 KB        |
+| `box-dental.webp`           | Box dental         | ~31 KB        |
+| `perfil-doctora1.webp`      | Directora Clínica  | ~23 KB        |
+| `perfil-doctor2.webp`       | Implantólogo       | ~12 KB        |
+| `perfil-doctora3.webp`      | Ortodoncista       | ~10 KB        |
 
 ### Para reemplazar fotos:
 

@@ -13,9 +13,7 @@ const CONFIG = {
   hoursSun  : 'Domingo y Festivos: Cerrado',
   mapLink   : 'https://www.google.com/maps?q=Osorno+Chile',
   mapEmbed  : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48618.2!2d-73.16!3d-40.57!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961598fc79ca7d!2sOsorno!5e0!3m2!1ses!2scl!4v1700000000000',
-  heroInterval : 8000,              // ms entre slides del hero
-  instagram : '#',
-  facebook  : '#',
+  heroInterval : 8000,
 };
 function getWhatsAppURL(customMessage) {
   var msg = customMessage ||
@@ -258,6 +256,8 @@ function initHeaderScroll() {
       header.style.transform = '';
     } else if (y > lastY && y > headerH) {
       header.style.transform = 'translateY(-100%)';
+    } else if (y < lastY) {
+      header.style.transform = '';
     }
     lastY = y;
   }, { passive: true });
