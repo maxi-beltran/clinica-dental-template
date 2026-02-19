@@ -9,5 +9,5 @@ desktop.ini
 *.swo
 *~
 
-# Node (if ever added)
+# Node
 node_modules/

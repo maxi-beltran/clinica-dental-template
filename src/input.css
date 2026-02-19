@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Custom Animations & Utilities ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.animate-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-faq-answer] {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+[data-faq-icon] {
+  transition: transform 0.3s ease;
+}
+
+/* ===== Hero Slideshow ===== */
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  will-change: opacity;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 10s ease-out;
+}
+
+.hero-slide.active img {
+  transform: scale(1.08);
+}
+
+.hero-content {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.hero-content.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-content.active > * {
+  animation: heroSlideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-content.active > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-content.active > *:nth-child(2) { animation-delay: 0.18s; }
+.hero-content.active > *:nth-child(3) { animation-delay: 0.32s; }
+.hero-content.active > *:nth-child(4) { animation-delay: 0.44s; }
+.hero-content.active > *:nth-child(5) { animation-delay: 0.56s; }
+
+@keyframes heroSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.96);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* ===== WhatsApp Tooltip ===== */
+
+.wsp-tooltip {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.wsp-tooltip.show {
+  opacity: 1;
+  transform: translateY(0);
+  animation: wspBounce 2s ease-in-out 1s infinite;
+}
+
+@keyframes wspBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}

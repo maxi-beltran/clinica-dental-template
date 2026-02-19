@@ -1,7 +1,7 @@
 # 🦷 Plantilla Web — Clínica Dental (Chile)
 
-Plantilla estática profesional lista para vender y personalizar para clínicas dentales en Chile.  
-**Mobile-first · WhatsApp-first · SEO local optimizado · Sin dependencias de build.**
+Plantilla profesional lista para vender y personalizar para clínicas dentales en Chile.  
+**Mobile-first · WhatsApp-first · SEO local · Tailwind CSS compilado · 0 dependencias en producción.**
 
 ---
 
@@ -14,47 +14,55 @@ proyecto/
 ├── quienes-somos.html      ← Historia, equipo profesional, tecnología
 ├── ubicacion.html          ← Dirección, horario, mapa Google Maps, cómo llegar
 ├── agendar.html            ← Agendamiento por WhatsApp (3 pasos + checklist)
-├── main.js                 ← Configuración central (CONFIG) + lógica JS
+├── 404.html                ← Página de error personalizada
+├── main.js                 ← JS fuente (CONFIG + lógica)
+├── main.min.js             ← JS minificado para producción
+├── tailwind.config.js      ← Configuración de Tailwind CSS
+├── package.json            ← Scripts de build (npm run build)
+├── sitemap.xml             ← Mapa del sitio para SEO
+├── robots.txt              ← Control de indexación
+├── netlify.toml            ← Deploy config + security headers
+├── LICENSE                 ← Licencia de uso comercial
 ├── README.md               ← Este archivo
 ├── .gitignore              ← Exclusiones de Git
+├── src/
+│   └── input.css           ← Estilos fuente (Tailwind directives + custom CSS)
 └── assets/
+    ├── favicon.svg         ← Favicon del sitio (diente SVG)
+    ├── css/
+    │   └── styles.css      ← CSS compilado y minificado (~24 KB)
     └── img/
-        ├── hero-bienvenida.webp      ← Hero slide 1 — bienvenida
-        ├── hero-limpieza.webp        ← Hero slide 2 — promo limpieza
-        ├── hero-ortodoncia.webp      ← Hero slide 3 — promo ortodoncia
-        ├── hero-cuotas.webp          ← Hero slide 4 — cuotas
-        ├── trat-blanqueamiento.webp  ← Tratamiento: blanqueamiento
-        ├── trat-cirugia.webp         ← Tratamiento: cirugía
-        ├── trat-endodoncia.webp      ← Tratamiento: endodoncia
-        ├── trat-implantes.webp       ← Tratamiento: implantes
-        ├── trat-limpieza.webp        ← Tratamiento: limpieza
-        ├── trat-odontologia.webp     ← Tratamiento: odontología
-        ├── trat-odontopediatria.webp ← Tratamiento: odontopediatría
-        ├── trat-ortodoncia.webp      ← Tratamiento: ortodoncia
-        ├── trat-periodoncia.webp     ← Tratamiento: periodoncia
-        ├── trat-protesis.webp        ← Tratamiento: prótesis
-        ├── trat-radiografia.webp     ← Tratamiento: radiografía
-        ├── trat-rehabilitacion.webp  ← Tratamiento: rehabilitación
-        ├── trat-urgencia.webp        ← Tratamiento: urgencia
-        ├── hero-dental.svg           ← Placeholder SVG hero
-        ├── clinica-interior.svg      ← Placeholder SVG interior clínica
-        ├── box-dental.svg            ← Placeholder SVG box dental
-        ├── equipo-profesional.svg    ← Placeholder SVG equipo
-        ├── tecnologia-dental.svg     ← Placeholder SVG tecnología
-        └── perfil-placeholder.svg    ← Placeholder SVG foto perfil
+        ├── hero-*.webp     ← 4 fotos hero slideshow
+        ├── trat-*.webp     ← 13 fotos de tratamientos
+        └── *.svg           ← 6 placeholders SVG
 ```
-
-> Las imágenes WebP son fotos de demostración (Unsplash). Los SVGs son placeholders para secciones no fotográficas (quiénes somos, perfiles).
 
 ---
 
 ## 🚀 Uso Rápido
 
+### Sin build (directo)
+
 1. **Descarga o clona** la carpeta del proyecto.
 2. **Abre `index.html`** directamente en tu navegador (doble clic).
-3. Listo — no requiere servidor, npm, ni build.
+3. Listo — el CSS ya viene compilado, no requiere servidor ni npm.
 
-> **Nota:** El mapa de Google Maps y las fuentes de Google necesitan conexión a internet.
+### Con build (para modificar estilos)
+
+```bash
+npm install            # Instala Tailwind CSS + Terser
+npm run build          # Compila CSS + minifica JS
+npm run watch          # Modo desarrollo (recompila CSS al guardar)
+```
+
+| Script          | Qué hace                                            |
+| --------------- | --------------------------------------------------- |
+| `npm run build` | Compila Tailwind CSS minificado + minifica main.js   |
+| `npm run build:css` | Solo recompila el CSS                            |
+| `npm run build:js`  | Solo minifica main.js → main.min.js              |
+| `npm run watch` | Recompila CSS en tiempo real al modificar HTML/CSS   |
+
+> **Nota:** Google Maps y Google Fonts necesitan conexión a internet.
 
 ---
 
@@ -173,17 +181,18 @@ Todas las fotos están en formato **WebP** (calidad 80) para máxima velocidad d
 
 ## 🛠️ Stack Técnico
 
-| Tecnología          | Detalle                                    |
-| ------------------- | ------------------------------------------ |
-| HTML5               | Semántico, accesible (ARIA labels)         |
-| Tailwind CSS        | Vía CDN (sin build)                        |
-| JavaScript Vanilla  | Sin frameworks, un solo archivo            |
-| Google Fonts        | Inter (400, 500, 600, 700, 800)            |
-| Google Maps Embed   | iframe para ubicación                      |
-| WhatsApp API        | Links `wa.me` con mensaje prellenado       |
-| JSON-LD             | Schema.org Dentist (en index.html)         |
+| Tecnología          | Detalle                                              |
+| ------------------- | ---------------------------------------------------- |
+| HTML5               | Semántico, accesible (ARIA labels)                   |
+| Tailwind CSS 3      | Compilado localmente (~24 KB minificado)             |
+| JavaScript Vanilla  | Sin frameworks, un solo archivo (+ versión minificada) |
+| Google Fonts        | Inter (400, 500, 600, 700, 800)                      |
+| Google Maps Embed   | iframe para ubicación                                |
+| WhatsApp API        | Links `wa.me` con mensaje prellenado                 |
+| JSON-LD             | Schema.org Dentist (en index.html)                   |
 | Open Graph          | Meta tags `og:title/description/image` en cada página |
-| Imágenes WebP       | Fotos optimizadas (~60% más livianas que JPG) |
+| Imágenes WebP       | Fotos optimizadas (~60% más livianas que JPG)        |
+| Netlify Config      | Security headers + cache + 404 redirect              |
 
 ---
 
@@ -201,7 +210,7 @@ Todas las fotos están en formato **WebP** (calidad 80) para máxima velocidad d
 - **Contenido dinámico** — Todo inyectado desde CONFIG vía `data-*` attributes.
 - **SEO local** — JSON-LD Dentist, Open Graph, meta description únicos, títulos optimizados.
 - **Promociones en hero** — Cada slide muestra precio, descuento y CTA directo a WhatsApp.
-- **12 cuotas badge** — Visible en hero y tratamientos.
+- **Página 404 personalizada** — Branded con links a inicio y tratamientos.
 
 ---
 
@@ -253,26 +262,31 @@ Antes de entregar al cliente, revisa cada punto:
 
 ### Rendimiento
 - [ ] Sin errores en la consola del navegador
-- [ ] Tailwind CDN + Google Fonts cargan (requiere internet)
+- [ ] CSS compilado carga correctamente (no depende de CDN)
+- [ ] Google Fonts carga (requiere internet)
 - [ ] Hero slideshow avanza automáticamente cada 8 segundos
+- [ ] Página 404 se muestra en rutas inexistentes
 
 ---
 
 ## 📝 Notas Técnicas
 
-- **Sin build**: No usa npm, webpack, Vite ni bundler. Todo funciona directo en el navegador.
-- **Tailwind CDN**: Se usa `cdn.tailwindcss.com` para desarrollo rápido. Para producción de alto tráfico, considera Tailwind CLI para CSS optimizado.
+- **Build system**: Usa `npm run build` para compilar CSS (Tailwind CLI) y minificar JS (Terser). El output queda en `assets/css/styles.css` y `main.min.js`.
+- **Sin CDN en producción**: El CSS viene pre-compilado a ~24 KB. No depende de cdn.tailwindcss.com.
 - **Navegadores**: Chrome, Firefox, Safari, Edge modernos (últimas 2 versiones).
 - **Accesibilidad**: Incluye `aria-label`, `aria-expanded`, roles y estructura semántica HTML5 (WCAG 2.1 nivel básico).
 - **Imágenes WebP**: Formato moderno con ~60% menos peso que JPG. Soportado por todos los navegadores modernos.
-- **JSON-LD**: Schema.org tipo `Dentist` embebido en `index.html` con datos de la clínica (nombre, dirección, teléfono, horario, coordenadas).
+- **JSON-LD**: Schema.org tipo `Dentist` embebido en `index.html` con datos de la clínica.
 - **Open Graph**: Cada página incluye `og:title`, `og:description`, `og:type`, `og:locale` y `og:image` para previews en redes sociales y WhatsApp.
+- **Security headers**: `netlify.toml` incluye CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy y cache headers para assets.
+- **SEO**: Incluye `sitemap.xml`, `robots.txt`, JSON-LD y meta tags únicos por página. Reemplaza `example.com` con el dominio real del cliente.
+- **404**: Página personalizada con redirect automático en Netlify.
 
 ---
 
 ## 📄 Licencia
 
-Template de uso comercial. Puedes venderlo, modificarlo y redistribuirlo libremente como plantilla para clientes de clínicas dentales.
+Template de uso comercial. Ver archivo `LICENSE` para términos completos.
 
 ---
 

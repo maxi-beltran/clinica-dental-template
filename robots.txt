@@ -1,0 +1,7 @@
+# Robots.txt — Clínica Dental Template
+# Reemplaza "example.com" con el dominio real del cliente
+
+User-agent: *
+Allow: /
+
+Sitemap: https://example.com/sitemap.xml

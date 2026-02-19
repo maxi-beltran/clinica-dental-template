@@ -10,43 +10,11 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_CL">
   <meta property="og:image" content="assets/img/hero-bienvenida.webp">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter','system-ui','sans-serif'] }
-        }
-      }
-    }
-  </script>
-  <style>
-    .animate-hidden{opacity:0;transform:translateY(24px)}
-    .animate-visible{opacity:1;transform:translateY(0);transition:opacity .6s ease,transform .6s ease}
-    [data-faq-answer]{max-height:0;overflow:hidden;transition:max-height .3s ease}
-    [data-faq-icon]{transition:transform .3s ease}
-    html{scroll-behavior:smooth}
-    .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease-in-out;will-change:opacity}
-    .hero-slide.active{opacity:1}
-    .hero-slide img{width:100%;height:100%;object-fit:cover;transform:scale(1);transition:transform 10s ease-out}
-    .hero-slide.active img{transform:scale(1.08)}
-    .hero-content{display:none;position:absolute;inset:0;align-items:center;padding:0 1rem}
-    .hero-content.active{display:flex;flex-direction:column;justify-content:center}
-    .hero-content.active > *{animation:heroSlideIn .7s cubic-bezier(.16,1,.3,1) both}
-    .hero-content.active > *:nth-child(1){animation-delay:.05s}
-    .hero-content.active > *:nth-child(2){animation-delay:.18s}
-    .hero-content.active > *:nth-child(3){animation-delay:.32s}
-    .hero-content.active > *:nth-child(4){animation-delay:.44s}
-    .hero-content.active > *:nth-child(5){animation-delay:.56s}
-    @keyframes heroSlideIn{from{opacity:0;transform:translateY(35px) scale(.96);filter:blur(6px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
-    .wsp-tooltip{opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .5s ease,transform .5s ease}
-    .wsp-tooltip.show{opacity:1;transform:translateY(0)}
-    .wsp-tooltip.show{animation:wspBounce 2s ease-in-out 1s infinite}
-    @keyframes wspBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-  </style>
+  <link rel="stylesheet" href="assets/css/styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -551,6 +519,6 @@
 
 
 
-  <script src="main.js"></script>
+  <script src="main.min.js"></script>
 </body>
 </html>

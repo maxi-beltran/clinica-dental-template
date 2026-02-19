@@ -1,0 +1,27 @@
+{
+  "name": "clinica-dental-template",
+  "version": "1.0.0",
+  "description": "Plantilla web profesional para clínicas dentales en Chile. Mobile-first, WhatsApp-first, SEO local.",
+  "private": true,
+  "scripts": {
+    "build:css": "npx tailwindcss -i src/input.css -o assets/css/styles.css --minify",
+    "build:js": "npx terser main.js -o main.min.js -c -m --comments false",
+    "build": "npm run build:css && npm run build:js",
+    "watch": "npx tailwindcss -i src/input.css -o assets/css/styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxi-beltran/clinica-dental-template.git"
+  },
+  "keywords": ["dental", "clinica", "template", "chile", "tailwindcss", "whatsapp"],
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/maxi-beltran/clinica-dental-template/issues"
+  },
+  "homepage": "https://github.com/maxi-beltran/clinica-dental-template#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19",
+    "terser": "^5.46.0"
+  }
+}

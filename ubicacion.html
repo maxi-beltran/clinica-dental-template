@@ -10,22 +10,11 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_CL">
   <meta property="og:image" content="assets/img/hero-bienvenida.webp">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']}}}}</script>
-  <style>
-    .animate-hidden{opacity:0;transform:translateY(24px)}
-    .animate-visible{opacity:1;transform:translateY(0);transition:opacity .6s ease,transform .6s ease}
-    [data-faq-answer]{max-height:0;overflow:hidden;transition:max-height .3s ease}
-    [data-faq-icon]{transition:transform .3s ease}
-    html{scroll-behavior:smooth}
-    .wsp-tooltip{opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .5s ease,transform .5s ease}
-    .wsp-tooltip.show{opacity:1;transform:translateY(0)}
-    .wsp-tooltip.show{animation:wspBounce 2s ease-in-out 1s infinite}
-    @keyframes wspBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-  </style>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="font-sans text-gray-700 bg-white antialiased">
   <header id="site-header" class="bg-white/95 backdrop-blur shadow-sm sticky top-0 z-40 transition-transform duration-300">
@@ -218,6 +207,6 @@
 
 
 
-  <script src="main.js"></script>
+  <script src="main.min.js"></script>
 </body>
 </html>
