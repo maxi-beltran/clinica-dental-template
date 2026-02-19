@@ -52,9 +52,13 @@ function injectDynamicContent() {
   document.querySelectorAll('[data-whatsapp-link]').forEach(function (el) {
     var custom = el.getAttribute('data-whatsapp-msg');
     el.href = getWhatsAppURL(custom || null);
+    el.target = '_blank';
+    el.rel    = 'noopener noreferrer';
   });
   document.querySelectorAll('[data-whatsapp-treatment]').forEach(function (el) {
     el.href = getWhatsAppTreatmentURL(el.getAttribute('data-whatsapp-treatment'));
+    el.target = '_blank';
+    el.rel    = 'noopener noreferrer';
   });
   document.querySelectorAll('[data-phone-link]').forEach(function (el) {
     el.href = 'tel:' + CONFIG.phoneTel;

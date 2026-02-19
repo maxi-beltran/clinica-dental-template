@@ -1,6 +1,6 @@
-# 🦷 Plantilla Web — Clínica Dental (Demo)
+# 🦷 Plantilla Web — Clínica Dental (Chile)
 
-Plantilla estática lista para vender y personalizar para clínicas dentales en Chile.  
+Plantilla estática profesional lista para vender y personalizar para clínicas dentales en Chile.  
 **Mobile-first · WhatsApp-first · SEO local optimizado · Sin dependencias de build.**
 
 ---
@@ -9,32 +9,52 @@ Plantilla estática lista para vender y personalizar para clínicas dentales en 
 
 ```
 proyecto/
-├── index.html              ← Página de inicio (hero, tratamientos, testimonios, ubicación)
+├── index.html              ← Inicio (hero slideshow, tratamientos, testimonios, ubicación)
 ├── tratamientos.html       ← Catálogo de 13 tratamientos + FAQ
 ├── quienes-somos.html      ← Historia, equipo profesional, tecnología
 ├── ubicacion.html          ← Dirección, horario, mapa Google Maps, cómo llegar
 ├── agendar.html            ← Agendamiento por WhatsApp (3 pasos + checklist)
-├── main.js                 ← Configuración central + lógica JS
+├── main.js                 ← Configuración central (CONFIG) + lógica JS
 ├── README.md               ← Este archivo
+├── .gitignore              ← Exclusiones de Git
 └── assets/
     └── img/
-        ├── hero-dental.svg           ← Placeholder hero (1400×600)
-        ├── clinica-interior.svg      ← Placeholder interior clínica (800×600)
-        ├── box-dental.svg            ← Placeholder box dental (800×600)
-        ├── equipo-profesional.svg    ← Placeholder equipo (800×600)
-        ├── tecnologia-dental.svg     ← Placeholder tecnología (800×600)
-        └── perfil-placeholder.svg    ← Placeholder foto perfil (400×400)
+        ├── hero-bienvenida.webp      ← Hero slide 1 — bienvenida
+        ├── hero-limpieza.webp        ← Hero slide 2 — promo limpieza
+        ├── hero-ortodoncia.webp      ← Hero slide 3 — promo ortodoncia
+        ├── hero-cuotas.webp          ← Hero slide 4 — cuotas
+        ├── trat-blanqueamiento.webp  ← Tratamiento: blanqueamiento
+        ├── trat-cirugia.webp         ← Tratamiento: cirugía
+        ├── trat-endodoncia.webp      ← Tratamiento: endodoncia
+        ├── trat-implantes.webp       ← Tratamiento: implantes
+        ├── trat-limpieza.webp        ← Tratamiento: limpieza
+        ├── trat-odontologia.webp     ← Tratamiento: odontología
+        ├── trat-odontopediatria.webp ← Tratamiento: odontopediatría
+        ├── trat-ortodoncia.webp      ← Tratamiento: ortodoncia
+        ├── trat-periodoncia.webp     ← Tratamiento: periodoncia
+        ├── trat-protesis.webp        ← Tratamiento: prótesis
+        ├── trat-radiografia.webp     ← Tratamiento: radiografía
+        ├── trat-rehabilitacion.webp  ← Tratamiento: rehabilitación
+        ├── trat-urgencia.webp        ← Tratamiento: urgencia
+        ├── hero-dental.svg           ← Placeholder SVG hero
+        ├── clinica-interior.svg      ← Placeholder SVG interior clínica
+        ├── box-dental.svg            ← Placeholder SVG box dental
+        ├── equipo-profesional.svg    ← Placeholder SVG equipo
+        ├── tecnologia-dental.svg     ← Placeholder SVG tecnología
+        └── perfil-placeholder.svg    ← Placeholder SVG foto perfil
 ```
+
+> Las imágenes WebP son fotos de demostración (Unsplash). Los SVGs son placeholders para secciones no fotográficas (quiénes somos, perfiles).
 
 ---
 
-## 🚀 Uso Rápido (Local)
+## 🚀 Uso Rápido
 
 1. **Descarga o clona** la carpeta del proyecto.
 2. **Abre `index.html`** directamente en tu navegador (doble clic).
 3. Listo — no requiere servidor, npm, ni build.
 
-> **Nota:** El mapa de Google Maps necesita conexión a internet para cargar.
+> **Nota:** El mapa de Google Maps y las fuentes de Google necesitan conexión a internet.
 
 ---
 
@@ -44,22 +64,22 @@ Toda la información editable de la clínica está centralizada en **`main.js`**
 
 ```javascript
 const CONFIG = {
-  clinicName:      'Clínica Dental [Nombre]',      // Nombre de la clínica
-  city:            'Osorno',                        // Ciudad
-  region:          'Los Lagos, Chile',              // Región
-  fullCity:        'Osorno, Chile',                 // Ciudad + país
-  address:         '[Calle] [Número], Osorno',      // Dirección completa
-  whatsappNumber:  '56912345678',                   // WhatsApp (sin + ni espacios)
-  whatsappDisplay: '+56 9 1234 5678',               // WhatsApp visible
-  phoneNumber:     '(64) 2XXX XXX',                 // Teléfono visible
-  phoneTel:        '+56642XXXXXX',                  // Teléfono para tel: link
-  hoursWeek:       'Lunes a Viernes: 09:00 – …',   // Horario semana
-  hoursSat:        'Sábado: 09:00 – 13:00',         // Horario sábado
-  hoursSun:        'Domingo y Festivos: Cerrado',   // Horario domingo
-  mapLink:         'https://maps.google.com/…',     // Link al mapa
-  mapEmbed:        'https://www.google.com/maps/embed?…', // Embed iframe
-  instagram:       '#',                             // URL Instagram
-  facebook:        '#',                             // URL Facebook
+  clinicName:      'Clínica Dental [Nombre]',
+  city:            'Osorno',
+  region:          'Los Lagos, Chile',
+  fullCity:        'Osorno, Chile',
+  address:         '[Calle] [Número], Osorno',
+  whatsappNumber:  '56912345678',        // sin + ni espacios
+  whatsappDisplay: '+56 9 1234 5678',
+  phoneNumber:     '(64) 2XXX XXX',
+  phoneTel:        '+56642XXXXXX',
+  hoursWeek:       'Lunes a Viernes: 09:00 – …',
+  hoursSat:        'Sábado: 09:00 – 13:00',
+  hoursSun:        'Domingo y Festivos: Cerrado',
+  mapLink:         'https://maps.google.com/…',
+  mapEmbed:        'https://www.google.com/maps/embed?…',
+  instagram:       '#',
+  facebook:        '#',
 };
 ```
 
@@ -67,34 +87,66 @@ const CONFIG = {
 
 1. Abre `main.js` en cualquier editor de texto.
 2. Reemplaza los valores de `CONFIG` con los datos reales de la clínica.
-3. Guarda el archivo — los cambios se reflejan en **todas las páginas** automáticamente.
+3. Guarda — los cambios se reflejan en **todas las páginas** automáticamente.
+
+> El contenido dinámico se inyecta vía `data-*` attributes en el HTML. La función `injectDynamicContent()` en main.js usa `querySelectorAll('[data-*]')` para poblar todos los elementos.
 
 ---
 
-## 🖼️ Reemplazar Imágenes
+## 🖼️ Imágenes
 
-Los archivos SVG en `/assets/img/` son **placeholders** que deben ser reemplazados con fotos reales:
+Todas las fotos están en formato **WebP** (calidad 80) para máxima velocidad de carga. Pesan entre 7 KB y 135 KB cada una.
 
-| Placeholder              | Reemplazar con                   | Tamaño recomendado | Usado en                   |
-| ------------------------ | -------------------------------- | ------------------- | -------------------------- |
-| `hero-dental.svg`        | Foto hero (dentista + paciente)  | 1400 × 600 px      | `index.html`               |
-| `clinica-interior.svg`   | Interior real de la clínica      | 800 × 600 px       | `index.html`               |
-| `box-dental.svg`         | Box dental / equipamiento        | 800 × 600 px       | `quienes-somos.html`       |
-| `equipo-profesional.svg` | Foto grupal del equipo           | 800 × 600 px       | `quienes-somos.html`       |
-| `tecnologia-dental.svg`  | Tecnología / equipos             | 800 × 600 px       | `quienes-somos.html`       |
-| `perfil-placeholder.svg` | Foto de cada profesional         | 400 × 400 px       | `quienes-somos.html`       |
+### Hero Slideshow (4 slides)
 
-### Para reemplazar:
+| Archivo                  | Contenido                        | Tamaño aprox. |
+| ------------------------ | -------------------------------- | ------------- |
+| `hero-bienvenida.webp`   | Slide de bienvenida              | ~73 KB        |
+| `hero-limpieza.webp`     | Promo limpieza dental $19.990    | ~115 KB       |
+| `hero-ortodoncia.webp`   | Promo frenillos desde $100.000   | ~135 KB       |
+| `hero-cuotas.webp`       | Financiamiento 12 cuotas         | ~102 KB       |
 
-1. Prepara fotos en formato `.jpg` o `.webp` (WebP recomendado para mejor rendimiento).
-2. Colócalas en `/assets/img/` con el mismo nombre pero extensión diferente.
-3. En cada HTML, busca `src="assets/img/hero-dental.svg"` y cámbialo a `src="assets/img/hero-dental.webp"` (o `.jpg`).
+### Tratamientos (13 fotos)
 
-> 💡 **Tip:** Optimiza las imágenes con [Squoosh](https://squoosh.app/) o [TinyPNG](https://tinypng.com/) antes de subirlas.
+| Archivo                     | Tratamiento      | Tamaño aprox. |
+| --------------------------- | ---------------- | ------------- |
+| `trat-limpieza.webp`        | Limpieza dental  | ~38 KB        |
+| `trat-blanqueamiento.webp`  | Blanqueamiento   | ~25 KB        |
+| `trat-ortodoncia.webp`      | Ortodoncia       | ~30 KB        |
+| `trat-implantes.webp`       | Implantes        | ~22 KB        |
+| `trat-endodoncia.webp`      | Endodoncia       | ~18 KB        |
+| `trat-cirugia.webp`         | Cirugía          | ~20 KB        |
+| `trat-protesis.webp`        | Prótesis         | ~15 KB        |
+| `trat-periodoncia.webp`     | Periodoncia      | ~17 KB        |
+| `trat-odontopediatria.webp` | Odontopediatría  | ~12 KB        |
+| `trat-odontologia.webp`     | Odontología      | ~21 KB        |
+| `trat-rehabilitacion.webp`  | Rehabilitación   | ~28 KB        |
+| `trat-radiografia.webp`     | Radiografía      | ~10 KB        |
+| `trat-urgencia.webp`        | Urgencia         | ~7 KB         |
+
+### Placeholders SVG (para secciones sin foto real)
+
+| Archivo                  | Uso                              | Página             |
+| ------------------------ | -------------------------------- | ------------------ |
+| `hero-dental.svg`        | Placeholder hero genérico        | —                  |
+| `clinica-interior.svg`   | Interior de la clínica           | `index.html`       |
+| `box-dental.svg`         | Box dental                       | `quienes-somos`    |
+| `equipo-profesional.svg` | Equipo profesional               | `quienes-somos`    |
+| `tecnologia-dental.svg`  | Tecnología                       | `quienes-somos`    |
+| `perfil-placeholder.svg` | Foto de perfil (testimonios)     | `quienes-somos`    |
+
+### Para reemplazar fotos:
+
+1. Prepara tus fotos en formato **WebP** (recomendado) o JPG.
+2. Usa las mismas dimensiones: hero ~1400×600 px, tratamientos ~800×600 px.
+3. Colócalas en `assets/img/` con el mismo nombre.
+4. Si cambias el nombre o extensión, actualiza el `src` en el HTML correspondiente.
+
+> 💡 **Tip:** Usa [Squoosh](https://squoosh.app/) para convertir y optimizar imágenes a WebP.
 
 ---
 
-## 🌐 Deploy (Publicar en Internet)
+## 🌐 Deploy (Publicar)
 
 ### Opción A — Netlify (Recomendado)
 
@@ -107,7 +159,7 @@ Los archivos SVG en `/assets/img/` son **placeholders** que deben ser reemplazad
 
 1. Sube el proyecto a un repositorio de GitHub.
 2. Ve a **Settings → Pages**.
-3. Selecciona rama `main` y carpeta `/` (root).
+3. Selecciona rama `main` (o `master`) y carpeta `/` (root).
 4. GitHub lo publica en `https://tu-usuario.github.io/nombre-repo`.
 
 ### Opción C — Hosting tradicional (cPanel, etc.)
@@ -115,108 +167,112 @@ Los archivos SVG en `/assets/img/` son **placeholders** que deben ser reemplazad
 1. Sube todos los archivos vía FTP al directorio `public_html`.
 2. Asegúrate de que `index.html` esté en la raíz.
 
+> **Distribución como ZIP:** Si distribuyes la plantilla como archivo ZIP, excluye la carpeta `.git/` para reducir el tamaño del archivo. Solo necesitas los archivos HTML, JS, README y la carpeta `assets/`.
+
 ---
 
 ## 🛠️ Stack Técnico
 
-| Tecnología          | Detalle                              |
-| ------------------- | ------------------------------------ |
-| HTML5               | Semántico, accesible (ARIA labels)   |
-| Tailwind CSS        | Vía CDN (sin build)                  |
-| JavaScript Vanilla  | Sin frameworks, un solo archivo      |
-| Google Fonts        | Inter (400, 500, 600, 700, 800)      |
-| Google Maps Embed   | iframe para ubicación                |
-| WhatsApp API        | Links `wa.me` con mensaje prellenado |
-| JSON-LD             | Schema.org Dentist (en index.html)   |
-| Open Graph          | Meta tags en cada página             |
+| Tecnología          | Detalle                                    |
+| ------------------- | ------------------------------------------ |
+| HTML5               | Semántico, accesible (ARIA labels)         |
+| Tailwind CSS        | Vía CDN (sin build)                        |
+| JavaScript Vanilla  | Sin frameworks, un solo archivo            |
+| Google Fonts        | Inter (400, 500, 600, 700, 800)            |
+| Google Maps Embed   | iframe para ubicación                      |
+| WhatsApp API        | Links `wa.me` con mensaje prellenado       |
+| JSON-LD             | Schema.org Dentist (en index.html)         |
+| Open Graph          | Meta tags `og:title/description/image` en cada página |
+| Imágenes WebP       | Fotos optimizadas (~60% más livianas que JPG) |
 
 ---
 
 ## 📱 Funcionalidades
 
+- **Hero slideshow** — 4 slides con crossfade, animación Ken Burns y texto con entrada staggered.
 - **Mobile-first** — Diseño optimizado para celular primero.
-- **Barra fija móvil** — WhatsApp + Llamar siempre visible en celular.
-- **Botón flotante WhatsApp** — Visible en desktop (esquina inferior derecha).
+- **Botón flotante WhatsApp** — Visible en todas las pantallas con tooltip automático.
+- **Links WhatsApp seguros** — Abren en nueva pestaña (`target="_blank"` + `rel="noopener noreferrer"`).
 - **Menú drawer** — Menú lateral en móvil con cierre por ESC, overlay y body lock.
 - **FAQ accordion** — Secciones de preguntas con animación suave.
 - **Scroll animations** — Elementos aparecen al hacer scroll (IntersectionObserver).
 - **Nav activo** — El link de la página actual se resalta automáticamente.
+- **Header auto-hide** — El header se oculta al hacer scroll hacia abajo y reaparece al subir.
 - **Contenido dinámico** — Todo inyectado desde CONFIG vía `data-*` attributes.
-- **SEO local** — JSON-LD Dentist, meta description únicos, títulos optimizados.
+- **SEO local** — JSON-LD Dentist, Open Graph, meta description únicos, títulos optimizados.
+- **Promociones en hero** — Cada slide muestra precio, descuento y CTA directo a WhatsApp.
 - **12 cuotas badge** — Visible en hero y tratamientos.
 
 ---
 
-## ✅ Checklist de Verificación
+## ✅ Checklist de Entrega
 
 Antes de entregar al cliente, revisa cada punto:
 
 ### Responsividad
-- [ ] Abrir en celular (o Chrome DevTools → responsive) — se ve bien
-- [ ] Abrir en tablet (768px) — las grids se ajustan
-- [ ] Abrir en desktop (1280px+) — layout completo sin overflow
+- [ ] Celular (o Chrome DevTools → responsive) — se ve bien
+- [ ] Tablet (768px) — las grids se ajustan
+- [ ] Desktop (1280px+) — layout completo sin overflow
 
 ### Navegación
-- [ ] Todos los links del header funcionan y llevan a la página correcta
+- [ ] Links del header funcionan y llevan a la página correcta
 - [ ] Menú móvil abre y cierra correctamente
 - [ ] ESC cierra el menú móvil
-- [ ] El link de la página actual está resaltado (teal-600)
+- [ ] Link de la página actual resaltado (teal-600)
 
 ### WhatsApp
-- [ ] Botón flotante (desktop) abre WhatsApp con mensaje prellenado
-- [ ] Barra fija (mobile) — botón WhatsApp abre con mensaje
-- [ ] Botones de tratamiento individuales incluyen el nombre del tratamiento
-- [ ] Botón de header abre WhatsApp correctamente
-
-### Teléfono
-- [ ] Link "Llamar" en la barra móvil inicia llamada
-- [ ] Teléfono en footer y ubicación es correcto
+- [ ] Botón flotante abre WhatsApp con mensaje prellenado
+- [ ] Botones de tratamiento incluyen el nombre del tratamiento en el mensaje
+- [ ] Links abren en nueva pestaña
 
 ### Contenido
-- [ ] Nombre de la clínica aparece en header, footer, hero, CTA de todas las páginas
-- [ ] Dirección es correcta en ubicación y footer
-- [ ] Horario es correcto en ubicación, agendar y footer
+- [ ] Nombre de la clínica aparece en header, footer, hero, CTA
+- [ ] Dirección correcta en ubicación y footer
+- [ ] Horario correcto en ubicación, agendar y footer
 - [ ] Testimonios tienen "*Ejemplo" tag visible
 
 ### SEO
 - [ ] Cada página tiene `<title>` y `<meta description>` únicos
-- [ ] JSON-LD en index.html tiene datos correctos
-- [ ] Open Graph tags presentes en cada página
+- [ ] JSON-LD en index.html tiene datos correctos del cliente
+- [ ] Open Graph tags (`og:title`, `og:description`, `og:image`) presentes
+- [ ] `og:image` apunta a una imagen válida
 
 ### Mapa
-- [ ] iframe de Google Maps carga correctamente en ubicación
+- [ ] iframe de Google Maps carga en ubicación
 - [ ] Link "Cómo llegar" abre Google Maps
 
 ### FAQ
-- [ ] Accordion funciona en tratamientos: clic abre, segundo clic cierra
+- [ ] Accordion funciona: clic abre, segundo clic cierra
 - [ ] Solo una respuesta abierta a la vez
 - [ ] Flecha rota 180° al abrir
 
 ### Imágenes
-- [ ] Placeholders SVG se ven correctamente
-- [ ] Al reemplazar por JPG/WebP, la imagen se muestra bien
-- [ ] No hay imágenes rotas (404)
+- [ ] Todas las fotos WebP cargan correctamente
+- [ ] SVGs de placeholder visibles donde corresponde
+- [ ] No hay imágenes rotas (404 en consola)
 
 ### Rendimiento
 - [ ] Sin errores en la consola del navegador
-- [ ] Tailwind CDN carga (requiere internet)
-- [ ] Google Fonts carga (requiere internet)
+- [ ] Tailwind CDN + Google Fonts cargan (requiere internet)
+- [ ] Hero slideshow avanza automáticamente cada 8 segundos
 
 ---
 
-## 📝 Notas para el Desarrollador
+## 📝 Notas Técnicas
 
-- **Sin build**: Este proyecto no usa npm, webpack, Vite ni ningún bundler. Todo funciona directamente en el navegador.
-- **Tailwind CDN**: Se usa `https://cdn.tailwindcss.com` para desarrollo. Para producción de alto tráfico, considera usar Tailwind CLI para generar un CSS optimizado.
-- **Navegadores**: Compatible con Chrome, Firefox, Safari, Edge modernos (últimas 2 versiones).
-- **Accesibilidad**: Se incluyen `aria-label`, `aria-expanded`, roles y estructura semántica HTML5. Cumple con nivel básico de WCAG 2.1.
-- **Rendimiento**: Las imágenes placeholder son SVGs livianos. Al reemplazar con fotos, usar formatos WebP y tamaños adecuados para mantener velocidad.
+- **Sin build**: No usa npm, webpack, Vite ni bundler. Todo funciona directo en el navegador.
+- **Tailwind CDN**: Se usa `cdn.tailwindcss.com` para desarrollo rápido. Para producción de alto tráfico, considera Tailwind CLI para CSS optimizado.
+- **Navegadores**: Chrome, Firefox, Safari, Edge modernos (últimas 2 versiones).
+- **Accesibilidad**: Incluye `aria-label`, `aria-expanded`, roles y estructura semántica HTML5 (WCAG 2.1 nivel básico).
+- **Imágenes WebP**: Formato moderno con ~60% menos peso que JPG. Soportado por todos los navegadores modernos.
+- **JSON-LD**: Schema.org tipo `Dentist` embebido en `index.html` con datos de la clínica (nombre, dirección, teléfono, horario, coordenadas).
+- **Open Graph**: Cada página incluye `og:title`, `og:description`, `og:type`, `og:locale` y `og:image` para previews en redes sociales y WhatsApp.
 
 ---
 
 ## 📄 Licencia
 
-Este es un template demo de uso comercial. Puedes venderlo, modificarlo y redistribuirlo libremente como plantilla para clientes de clínicas dentales.
+Template de uso comercial. Puedes venderlo, modificarlo y redistribuirlo libremente como plantilla para clientes de clínicas dentales.
 
 ---
 
